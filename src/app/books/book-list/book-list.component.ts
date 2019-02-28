@@ -20,10 +20,14 @@ export class BookListComponent implements OnInit {
     this.router.navigate([book.isbn], { relativeTo: this.route });
   }
   deleteBook(book: IBook) {
-    this.booksService.deleteBook(book).subscribe(() => this.ngOnInit());
+    console.log(book);
+    if (book) {
+      this.booksService.deleteBook(book).subscribe(() => this.ngOnInit());
+    }
   }
 
   ngOnInit() {
+    console.log('ngOnInit!');
     this.booksService.getBooks().subscribe(books => (this.books = books));
   }
 }

@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IBook } from './custom-types';
-import { catchError } from 'rxjs/operators';
-import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -31,9 +29,5 @@ export class BooksService {
   createBook(book: IBook) {
     const url = `${this.restRoot}`;
     return this.http.post<IBook>(url, book);
-  }
-  handleErrors(data) {
-    console.error();
-    return throwError(data);
   }
 }
