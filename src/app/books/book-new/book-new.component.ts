@@ -34,7 +34,7 @@ export class BookNewComponent implements OnInit {
     });
   }
   saveBook() {
-    this.booksService.updateBook(this.form.value).subscribe(b => {
+    this.booksService.createBook(this.form.value).subscribe(b => {
       this.router.navigate(['..', b.isbn], { relativeTo: this.route });
     });
   }

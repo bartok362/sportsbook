@@ -9,9 +9,13 @@ import { IBook } from '../shared/custom-types';
 export class BookPreviewComponent {
   @Input() book: IBook;
   @Output() bookselected = new EventEmitter<IBook>();
+  @Output() delete = new EventEmitter<IBook>();
   constructor() {}
 
   selectThisBook() {
     this.bookselected.emit(this.book);
+  }
+  deleteThisBook() {
+    this.delete.emit(this.book);
   }
 }

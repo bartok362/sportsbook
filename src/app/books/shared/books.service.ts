@@ -22,6 +22,10 @@ export class BooksService {
     const url = this.restRoot + book.isbn;
     return this.http.put<IBook>(url, book);
   }
+  deleteBook(book: IBook) {
+    const url = this.restRoot + book.isbn;
+    return this.http.delete<any>(url);
+  }
   createBook(book: IBook) {
     const url = `${this.restRoot}`;
     return this.http.post<IBook>(url, book);
