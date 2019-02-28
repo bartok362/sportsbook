@@ -7,7 +7,7 @@ import {
 } from '@angular/common/http/testing';
 import { mockBooks } from './mock.book.service';
 
-fdescribe('BooksService', () => {
+describe('BooksService', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule]
