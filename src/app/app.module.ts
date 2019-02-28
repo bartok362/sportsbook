@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { MyNavComponent } from './my-nav/my-nav.component';
 import { AboutModule } from './about/about.module';
 import { ErrorInterceptor } from './books/shared/error.interceptor';
+import { PreloadDelayed } from './shared/preload-delayed';
 
 @NgModule({
   declarations: [AppComponent, MyNavComponent],
@@ -16,7 +17,8 @@ import { ErrorInterceptor } from './books/shared/error.interceptor';
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorInterceptor,
       multi: true
-    }
+    },
+    PreloadDelayed
   ],
   bootstrap: [AppComponent]
 })
